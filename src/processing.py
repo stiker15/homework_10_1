@@ -1,6 +1,7 @@
 from typing import List, Dict
 from datetime import datetime
 
+
 def filter_by_state(data_list: List[Dict], state: str = 'EXECUTED') -> List[Dict]:
     """
     Фильтрует список словарей по значению ключа 'state'.
@@ -20,6 +21,7 @@ def filter_by_state(data_list: List[Dict], state: str = 'EXECUTED') -> List[Dict
         if state_value == state:
             result.append(item)
     return result
+
 
 def sort_by_date(data_list: List[Dict]) -> List[Dict]:
     """
