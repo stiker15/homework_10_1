@@ -9,9 +9,9 @@ def mask_account_card(info: str) -> str:
     :return: Строка с замаскированным номером.
     """
     if info.startswith("Счет"):
-        return f"{info[:5]} {get_mask_account(int(info[6:]))}"
+        return f"{info[:5]}{get_mask_account((info[5:]))}"
     else:
-        return f"{info[:-16].strip()} {get_mask_card_number(int(info[-16:]))}"
+        return f"{info[:-16].strip()} {get_mask_card_number((info[-16:]))}"
 
 
 def get_date(date_string: str) -> str:
