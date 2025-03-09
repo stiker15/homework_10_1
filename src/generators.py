@@ -12,7 +12,7 @@ def filter_by_currency(transactions, currency_code):
 
 
 usd_transactions = filter_by_currency(transactions, "USD")
-for _ in range(2):
+for i in range(2):
     print(next(usd_transactions))
 
 
@@ -21,7 +21,7 @@ def transaction_descriptions(transactions):
         yield transaction.get("description", "Описание не найдено")
 
 descriptions = transaction_descriptions(transactions)
-for _ in range(5):
+for i in range(5):
     print(next(descriptions))
 
 
