@@ -1,6 +1,7 @@
 import pytest
 from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
+
 @pytest.mark.parametrize(
     "transactions, currency_code, expected_length",
     [
@@ -51,6 +52,7 @@ def test_transaction_descriptions(transactions):
     ]
     assert descriptions == expected_descriptions
 
+
 def test_transaction_descriptions_empty():
     descriptions = list(transaction_descriptions([]))
     assert descriptions == []
@@ -72,6 +74,7 @@ def test_transaction_descriptions_empty():
 def test_card_number_generator(start, stop, expected_numbers):
     generated_numbers = list(card_number_generator(start, stop))
     assert generated_numbers == expected_numbers
+
 
 def test_card_number_generator_empty_range():
     generated_numbers = list(card_number_generator(5, 4))

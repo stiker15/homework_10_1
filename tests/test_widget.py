@@ -2,7 +2,8 @@ import pytest
 
 from src.widget import get_date, mask_account_card
 
-#Тестирование вывода замаскированных номеров с разными названиями карт
+
+# Тестирование вывода замаскированных номеров с разными названиями карт
 def test_mask_card():
 
     assert mask_account_card("Maestro 1596837868705199") == "Maestro 1596 83** **** 5199"
@@ -13,10 +14,12 @@ def test_mask_card():
 
     assert mask_account_card("Visa Gold 5999414228426353") == "Visa Gold 5999 41** **** 6353"
 
+
 # Тестирование вывода замаскированного счета
 def test_mask_account():
 
     assert mask_account_card("Счет 73654108430135874305") == "Счет **4305"
+
 
 # Тестирование правильности преобразования даты
 @pytest.mark.parametrize("input_date, expected_output", [
