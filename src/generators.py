@@ -25,8 +25,8 @@ for i in range(5):
     print(next(descriptions))
 
 
-def card_number_generator(start, end):
-    for number in range(start, end + 1):
+def card_number_generator(start, stop):
+    for number in range(start, stop + 1):
         # Форматируем номер карты с ведущими нулями и пробелами
         card_number = f"{number:016}"
         formatted_card_number = f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
