@@ -1,4 +1,5 @@
 from src.processing import filter_by_state, sort_by_date
+
 # Примеры использования
 if __name__ == "__main__":
     data = [
