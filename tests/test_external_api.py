@@ -1,6 +1,7 @@
 from unittest import TestCase, mock
 from src.external_api import convert_to_rub
 
+
 class TestExternalAPI(TestCase):
     @mock.patch('src.external_api.requests.get')
     def test_convert_to_rub_usd(self, mock_get):

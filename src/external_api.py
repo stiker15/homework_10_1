@@ -3,6 +3,8 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
+
+
 def convert_to_rub(transaction):
     """Конвертирует сумму транзакции в рубли."""
     amount = transaction.get('amount')

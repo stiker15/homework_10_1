@@ -2,7 +2,6 @@ from src.utils import read_transactions
 from src.external_api import convert_to_rub
 
 
-
 file_path = "data/operations.json"
 transactions = read_transactions(file_path)
 

@@ -1,4 +1,4 @@
-import os
+
 import json
 
 
@@ -22,6 +22,8 @@ def read_transactions(file_path):
     return []
 
 # Пример вызова функции
+
+
 file_path = "../data/operations.json"
 transactions = read_transactions(file_path)
 print(transactions)
