@@ -1,16 +1,20 @@
-from src.processing import filter_by_state, sort_by_date
+from src.utils import read_transactions
+from src.external_api import convert_to_rub
 
-# Примеры использования
-if __name__ == "__main__":
-    data = [
-        {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-        {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
-        {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-        {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'},
-    ]
 
-    canceled_filter = filter_by_state(data)
-    print(canceled_filter)
 
-    sorted_data_desc = sort_by_date(data)
-    print(sorted_data_desc)
+file_path = "data/operations.json"
+transactions = read_transactions(file_path)
+
+for transaction in transactions:
+    amount_info = transaction.get('operationAmount', {})
+    amount = amount_info.get('amount', 0)
+    currency_code = amount_info.get('currency', {}).get('code')
+
+    transaction_data = {
+        'amount': amount,
+        'currency': currency_code
+    }
+
+    converted_amount = convert_to_rub(transaction_data)
+    print(f"Конвертированная сумма: {converted_amount} RUB")
