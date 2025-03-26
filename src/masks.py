@@ -21,6 +21,7 @@ file_handler.setFormatter(file_formatter)
 # Добавление handler в логер
 logger.addHandler(file_handler)
 
+
 def get_mask_card_number(card_number: str) -> str:
     """
     Маскирует номер банковской карты.
