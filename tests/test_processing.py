@@ -15,7 +15,7 @@ def test_filter_by_state(transaction, state, expected):
     assert sorted(filtered, key=lambda x: x['id']) == sorted(expected, key=lambda x: x['id'])
 
 
-    # Тестируем сортировку по дате в порядке убывания
+# Тестируем сортировку по дате в порядке убывания
 def test_sort_by_date_descending(sample_data):
     sorted_data = sort_by_date(sample_data)
     expected_data = [

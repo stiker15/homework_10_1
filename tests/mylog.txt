@@ -1,0 +1,10 @@
+2025-03-13 21:05:08,187 - my_function ok
+2025-03-13 21:05:08,190 - successful_function ok
+2025-03-13 21:05:08,215 - error_function error: division by zero. Inputs: (1, 0), {}
+2025-03-13 21:05:08,218 - file_function ok
+2025-03-13 21:18:26,326 - my_function ok
+2025-03-13 21:18:26,330 - successful_function ok
+2025-03-13 21:18:26,355 - error_function error: division by zero. Inputs: (1, 0), {}
+2025-03-13 21:18:26,358 - file_function ok
+2025-03-13 22:25:02,048 - my_function error: division by zero. Inputs: (2, 0), {}
+2025-03-13 22:25:17,581 - my_function error: division by zero. Inputs: (2, 0), {}
