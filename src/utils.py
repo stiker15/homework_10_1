@@ -1,5 +1,26 @@
-
+import logging
 import json
+import os
+
+# Создание директории logs
+log_dir = os.path.join(os.path.dirname(__file__), 'logs')
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+# Настройка логера для модуля utils
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+# Настройка file_handler для записи логов в файл
+file_handler = logging.FileHandler(os.path.join(log_dir, 'utils.log'), encoding='utf-8')
+file_handler.setLevel(logging.DEBUG)
+
+# Настройка формата записи логов
+file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+
+# Добавление handler в логер
+logger.addHandler(file_handler)
 
 
 def read_transactions(file_path):
@@ -9,16 +30,16 @@ def read_transactions(file_path):
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
-            print("Файл открыт.")
+            logger.debug("Файл открыт.")
             data = json.load(file)
-            print("Данные загружены.")
-            print("Тип данных:", type(data))
+            logger.debug("Данные загружены.")
             if isinstance(data, list):
+                logger.info("Транзакции успешно считаны.")
                 return data
     except FileNotFoundError:
-        print("Файл не найден.")
+        logger.error("Файл не найден.")
     except json.JSONDecodeError:
-        print("Ошибка декодирования JSON.")
+        logger.error("Ошибка декодирования JSON.")
     return []
 
 # Пример вызова функции
