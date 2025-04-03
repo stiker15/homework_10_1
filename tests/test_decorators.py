@@ -1,6 +1,7 @@
-import pytest
-from io import StringIO
 import logging
+from io import StringIO
+
+import pytest
 
 
 def error_function(x, y):
