@@ -35,7 +35,7 @@ class TestReadCSVFile(unittest.TestCase):
 
         self.assertEqual(data_transactions, expected_transactions)
 
-        mock_read_csv.assert_called_once_with(csv_path)
+        mock_read_csv.assert_called_once_with(csv_path, delimiter=';')
 
 
 class TestReadFinancialTransactionsFromExcel(unittest.TestCase):

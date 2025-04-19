@@ -2,14 +2,9 @@ import pandas as pd
 
 
 def read_csv_file(csv_file_path):
-    """
-    Читает данные из CSV-файла и преобразует их в список словарей.
 
-    :param csv_file_path: Путь к CSV-файлу для чтения.
-    :return: Список словарей, где каждый словарь представляет собой строку из CSV-файла.
-    """
-    transactions_df = pd.read_csv(csv_file_path)
-    transactions_list = transactions_df.to_dict(orient='records')
+    df = pd.read_csv(csv_file_path, delimiter=';')
+    transactions_list = df.to_dict(orient="records")
     return transactions_list
 
 
@@ -26,10 +21,8 @@ def read_financial_transactions_from_excel(excel_file_path):
 
 
 if __name__ == '__main__':
-    csv_path = 'transactions.csv'
+    csv_path = '../data/transactions.csv'
     transactions = read_csv_file(csv_path)
-    print(transactions)
 
-    excel_path = 'transactions_excel.xlsx'
+    excel_path = '../data/transactions_excel.xlsx'
     transactions_excel = read_financial_transactions_from_excel(excel_path)
-    print(transactions_excel)

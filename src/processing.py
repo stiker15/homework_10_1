@@ -1,4 +1,3 @@
-from datetime import datetime
 from typing import Dict, List
 
 
@@ -23,13 +22,5 @@ def filter_by_state(data_list: List[Dict], state: str = 'EXECUTED') -> List[Dict
     return result
 
 
-def sort_by_date(data_list: List[Dict]) -> List[Dict]:
-    """
-    Сортирует список словарей по ключу 'date'.
-
-    :param data_list: Список словарей, содержащих ключ 'date'.
-    :return: Новый отсортированный список словарей.
-    """
-    return sorted(data_list,
-                  key=lambda x: datetime.strptime(x['date'], '%Y-%m-%dT%H:%M:%S.%f'),
-                  reverse=True)
+def sort_by_date(data_list, reverse=True):
+    return sorted(data_list, key=lambda x: x.get('date'), reverse=reverse)

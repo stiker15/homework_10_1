@@ -47,4 +47,3 @@ def read_transactions(file_path):
 
 file_path = "../data/operations.json"
 transactions = read_transactions(file_path)
-print(transactions)

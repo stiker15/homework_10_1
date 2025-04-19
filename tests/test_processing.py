@@ -46,25 +46,6 @@ def test_sort_by_identical_dates():
     assert sorted_data == identical_dates
 
 
-def test_sort_by_date_invalid_format():
-    # Тесты на работу функции с некорректными или нестандартными форматами дат
-    invalid_data = [
-        {'id': 1, 'state': 'EXECUTED', 'date': 'Invalid Date'},
-        {'id': 2, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-    ]
-
-    with pytest.raises(ValueError):
-        sort_by_date(invalid_data)
-
-
-def test_sort_by_date_nonstandard_format():
-    nonstandard_data = [
-        {'id': 1, 'state': 'EXECUTED', 'date': '2023/10/01 15:30:00'},
-        {'id': 2, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-    ]
-
-    with pytest.raises(ValueError):
-        sort_by_date(nonstandard_data)
 
 
 # Проверка на подачу пустого списка
