@@ -61,3 +61,14 @@ def card_number_generator(start, stop):
 
 for card_number in card_number_generator(1, 7):
     print(card_number)
+
+
+def filter_by_currency_csv_xslx(transactions, currency_code):
+    my_list = []
+    for transaction in transactions:
+        if (
+            transaction.get("currency_code")
+            == currency_code
+        ):
+            my_list.append(transaction)
+    return my_list
